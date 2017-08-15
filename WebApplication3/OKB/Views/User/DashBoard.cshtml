@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "DashBoard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html>
+<head>
+   
+
+</head>
+<body>
+    <table>
+        <tr>
+            Name
+        </tr>
+
+        <tr>
+            Email
+        </tr>
+
+    </table>
+
+    @foreach (var item in @ViewBag.GetData)
+    {
+        <table>
+            <tr>
+                <td>@item.Name</td>
+            </tr>
+            <tr>
+                <td>@item.Email</td>
+            </tr>
+        </table>
+    }
+
+
+</body>
+</html>  
+

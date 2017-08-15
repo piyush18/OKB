@@ -1,0 +1,39 @@
+﻿@model IEnumerable<OKB.EF.Registration>
+
+@{
+    ViewBag.Title = "GetAllRegisteredUser";
+}
+
+@foreach (var item in Model)
+{
+
+    @Html.Partial("_ListUser", item);
+    { Html.RenderPartial("_ListUser", item); }
+
+    @*<table style="font-family:Arial;border:1px solid black;width:300px">
+        <tr>
+            <td>
+
+
+                <table>
+                    <tr>
+                        <td>
+                            Name
+                        </td>
+                        <td>@item.Name</td>
+                    </tr>
+                </table>
+            </td>
+
+        </tr>
+    </table>*@
+}
+
+
+
+
+@using (Html.BeginForm("ExcelUpload", "User", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <input type="file" name="file" />
+    <input type="submit" id="uploadFile" value="OK" />
+}  
